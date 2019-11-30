@@ -1,0 +1,7 @@
+webfont(name, fileName, weight = normal, style = normal)
+	@font-face
+		font-family name
+		src url('../fonts/' + fileName + '.woff2') format('woff2'),
+			url('../fonts/' + fileName + '.woff') format('woff')
+		font-weight weight
+		font-style style

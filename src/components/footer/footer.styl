@@ -1,0 +1,67 @@
+.mainFooter
+	padding 43px 0
+	background var(--purple)
+
+.mainFooter__container
+	max-width 900px
+
+.mainFooter__section
+	margin-top 21px
+	font-weight 500
+	font-size 14px
+	color #fff
+	
+	&:first-child
+		margin-top 0
+	
+	b
+		display block
+		font-weight 500
+
+.social
+	list-style none
+	margin 30px 0 40px
+	padding 0
+	display flex
+	align-items center
+	
+	li
+		margin-left 25px
+		
+		&:first-child
+			margin-left 0
+	
+	a
+		text-decoration none
+		transition .25s
+		
+		&:hover
+			opacity .5
+
+.mainFooter__copyright
+	margin-top 40px
+	font-weight 500
+	font-size 12px
+	text-decoration none
+	color rgba(255,255,255,.5)
+	
+	&:hover
+		text-decoration underline
+
+@media (min-width: 720px)
+	.mainFooter__container
+		display grid
+		align-items center
+		grid-template-columns repeat(3, 1fr)
+		grid-row-gap 50px
+		text-align center
+	
+	.mainFooter__section
+		margin-top 0
+	
+	.mainFooter__social
+		margin 0
+		justify-content center
+	
+	.mainFooter__copyright
+		margin 0

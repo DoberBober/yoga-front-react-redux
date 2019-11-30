@@ -1,0 +1,37 @@
+.mainHeader
+	position relative
+
+.mainMenu
+	display none
+
+.menuBtn
+	border none
+	padding 0
+	background none
+
+.phone
+	a
+		font-size 12px
+		color var(--purple)
+		text-decoration none
+
+.mainHeader__container
+	padding-top 20px
+	padding-bottom 20px
+	display flex
+	align-items center
+	justify-content space-between
+
+@media (min-width: 720px)
+	.mainHeader__container
+		padding-top 44px
+		padding-bottom 44px
+
+@media (min-width: 1024px)
+	.mainHeader__container
+		padding-top 84px
+		padding-bottom 84px
+
+	.phone
+		a
+			font-size 16px

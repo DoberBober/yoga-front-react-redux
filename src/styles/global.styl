@@ -1,0 +1,59 @@
+html
+	box-sizing border-box
+	scroll-behavior smooth
+
+*, *::before, *:after
+	box-sizing inherit
+
+body
+	margin 0
+	font-family 'Geometria', Arial, sans-serif
+	background #FCF8FE
+
+img
+	max-width 100%
+	height auto
+
+.visually-hidden
+	position absolute
+	width 1px
+	height 1px
+	margin -1px
+	padding 0
+	border none
+	overflow hidden
+	white-space nowrap
+	clip rect(0,0,0,0)
+	-webkit-clip-path inset(100%)
+	clip-path inset(100%)
+
+.container
+	width 100%
+	max-width 1200px
+	margin 0 auto
+	padding 0 15px
+
+.heading
+	margin 22px 0 35px
+	font-size 18px
+	color var(--purple)
+	text-align center
+
+@media (min-width: 720px)
+	.heading
+		font-size 21px
+
+@media (min-width: 1024px)
+	.heading
+		font-size 30px
+	
+#app
+	min-height 100vh
+	display flex
+	flex-direction column
+
+#app > article
+	flex-grow 1
+
+.page404
+	text-align center

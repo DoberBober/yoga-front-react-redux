@@ -1,0 +1,56 @@
+.trialLesson
+	padding 70px 0
+	background url('trialLesson.png') center center no-repeat
+	background-size cover
+	background-position -220px center
+
+.trialLesson__container
+	max-width 900px
+	padding 0 35px
+
+.trialLesson__heading
+	text-align left
+
+.trialLesson__input
+	display block
+	width 100%
+	margin-top 15px
+	padding 10px 0
+	border none
+	background transparent
+	border-bottom 1px solid var(--purple)
+	font-weight 500
+	font-size 14px
+	color var(--purple)
+	transition .25s
+	
+	&:first-of-type
+		margin-top 0
+		
+	&:focus
+		outline none
+		box-shadow inset 0 -1px 0 0 var(--purple)
+
+.trialLesson__btn
+	margin-top 35px
+	display block
+	padding 18px
+	width 100%
+	font-weight 500
+	font-size 14px
+	font-family 'Geometria', Arial, sans-serif
+	color #fff
+	background var(--pink)
+	border 1px solid var(--pink)
+	transition .25s
+	
+	&:hover
+		background transparent
+		color var(--pink)
+
+@media (min-width: 1024px)
+	.trialLesson
+		height 100vh
+		display flex
+		align-items center
+	

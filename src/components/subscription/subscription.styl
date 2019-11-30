@@ -1,0 +1,121 @@
+.subscription
+	padding-top 43px
+	background url('subscription.png') center center no-repeat
+
+.subscription__plans
+	display flex
+	justify-content center
+	margin-bottom 35px
+
+.subscription__plan
+	font-weight 500
+	font-size 12px
+	margin 0 20px
+	text-decoration none
+	color var(--pink)
+	position relative
+
+	&::before
+		position absolute
+		content ''
+		left 50%
+		bottom -2px
+		background var(--pink)
+		height 1px
+		width 0
+		transition .25s
+		
+	&:hover
+		&::before
+			width 100%
+			left 0
+
+.subscription__plan--active
+	&::before
+		width 100%
+		left 0
+
+.subscription__item
+	margin-top 30px
+	padding 30px 50px
+	background #fff
+	text-align center
+	display none
+
+	&:first-of-type
+		margin-top 0
+
+.subscription__item--active
+	display block
+
+.subscription__name
+	margin 0 0 20px
+	font-weight 700
+	font-size 16px
+	color var(--purple)
+
+.subscription__info
+	max-width 135px
+	margin 0 auto
+	font-weight 500
+	font-size 10px
+	color var(--pink)
+
+.subscription__price
+	margin 20px 0 0
+	font-weight 700
+	font-size 18px
+	color var(--purple)
+
+.subscription__link
+	display table
+	margin 25px auto 0
+	padding 11px 23px
+	font-weight 500
+	font-size 10px
+	color #fff
+	background var(--purple)
+	text-decoration none
+	transition .25s
+	
+	&:hover
+		background var(--pink)
+
+@media (min-width: 720px)
+	.subscription
+		padding 50px 0
+		
+	.subscription__list
+		display flex
+		justify-content space-around
+		
+	.subscription__item
+		margin-top 0
+		width 30%
+		padding-left 30px
+		padding-right 30px
+		
+	.subscription__name
+		font-size 16px
+		
+	.subscription__price
+		font-size 26px
+
+@media (min-width: 1024px)
+	.subscription
+		height 100vh
+		display flex
+		align-items center
+		background-size cover
+		
+	.subscription__plans
+		margin-bottom 50px
+
+	.subscription__info
+		font-size 12px
+	
+	.subscription__price
+		font-size 30px
+	
+	.subscription__link
+		font-size 12px

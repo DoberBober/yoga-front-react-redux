@@ -1,0 +1,54 @@
+.top
+	margin-top -60px
+	padding-top 95px
+	padding-bottom 40px
+	background url('top.jpg') center bottom -40px no-repeat
+	background-size auto 115%
+	text-align center
+
+.top__title
+	margin 0
+	font-weight normal
+	font-family 'Caveat', Arial, sans-serif
+	font-size 18px
+	color var(--purple)
+
+.top__subtitle
+	display table
+	margin 0 auto
+	font-weight 500
+	font-size 67px
+	letter-spacing 14px
+	color #fff
+
+@media (min-width: 480px)
+	.top
+		background-size cover
+	
+@media (min-width: 720px)
+	.top
+		margin-top -108px
+		
+	.top__title
+		font-size 24px
+
+	.top__subtitle
+		font-size 144px
+
+@media (min-width: 1024px)
+	.top
+		margin-top -188px
+		height 100vh
+		background-position center bottom
+
+	.top__container
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		justify-content: center;
+
+	.top__title
+		font-size 45px
+
+	.top__subtitle
+		font-size 265px

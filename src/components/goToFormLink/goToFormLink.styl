@@ -1,0 +1,36 @@
+.goToFormLink
+	text-align left
+	display inline-flex
+	align-items center
+	justify-content center
+	margin 0 auto
+	font-size 10px
+	color var(--pink)
+	text-decoration none
+	transition .25s
+	
+	span
+		width 30px
+		height 30px
+		flex-shrink 0
+		margin-right 7px
+		display flex
+		align-items center
+		justify-content center
+		background var(--pink)
+		transition .25s
+		
+	&:hover
+		color var(--purple)
+		
+		span
+			background var(--purple)
+
+@media (min-width: 1024px)
+	.goToFormLink
+		font-size 14px
+		
+		span
+			width 48px
+			height 48px
+			margin-right 13px

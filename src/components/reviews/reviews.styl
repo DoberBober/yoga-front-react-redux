@@ -1,0 +1,116 @@
+.reviews
+	padding 20px 0 70px
+	
+	.flickity-enabled
+		position relative
+		user-select none
+		outline none
+
+	.flickity-viewport
+		position relative
+		overflow hidden
+
+	.flickity-button
+		position absolute
+		background hsla(0,0%,100%,.75)
+		border none
+		color #333
+		border-radius 50%
+
+	.previous, .next
+		top initial
+		bottom -20px
+		left 50%
+		right initial
+		margin-left -22px
+		width 32px
+		height 32px
+
+	.previous
+		transform translate(-75%, 100%)
+
+	.next
+		transform translate(75%, 100%)
+
+.reviews__item
+	width 90%
+	margin 10px 5% 55px
+	background #fff
+	box-shadow 0px 4px 25px rgba(142, 128, 169, 0.2)
+	padding 60px 15px 30px
+	position relative
+	
+.reviews__icon
+	position absolute
+	left 9px
+	top 23px
+
+.reviews__text
+	p
+		font-weight 500
+		font-size 10px
+		color var(--purple)
+		
+		&:first-child
+			margin-top 0
+
+.reviews__author
+	display flex
+	align-items flex-start
+	margin-top 25px
+
+.reviews__img
+	flex-shrink 0
+	margin-right 13px
+
+.reviews__name
+	margin 0
+	font-weight 500
+	font-size 12px
+	color var(--pink)
+
+.reviews__date
+	font-weight 500
+	font-size 10px
+	color var(--purple)
+
+.reviews__social
+	margin 8px 0 0
+	
+	li
+		margin 0 5px
+
+	svg
+		fill rgba(139,126,172,.65)
+
+@media (min-width: 720px)
+	.reviews__item
+		width 48%
+
+
+@media (min-width: 1024px)
+	.reviews
+		height 100vh
+		display flex
+		align-items center
+
+		.flickity-viewport
+			&::before, &::after
+				content ''
+				position absolute
+				height 100%
+				width 100px
+				top 0
+				z-index 1
+			
+			&::before
+				left 0
+				background linear-gradient(90deg, rgba(252,248,254,1) 0%, rgba(252,248,254,.25) 50%, rgba(252,248,254,0) 100%)
+			
+			&::after
+				right 0
+				background linear-gradient(90deg, rgba(252,248,254,0) 0%, rgba(252,248,254,.25) 50%, rgba(252,248,254,1) 100%)
+
+	.reviews__text
+		p
+			font-size 12px
