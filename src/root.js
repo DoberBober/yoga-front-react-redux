@@ -1,21 +1,21 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
+import { Route, Switch } from "react-router-dom";
 
 import './styles/styles.styl';
 
-import App from './components/app/app.js';
+import { renderRoutes } from 'react-router-config';
+import Routes from './helpers/routes';
 
-import { API } from './helpers/const';
 
 class Root extends React.Component {
 	render() {
 		return (
-			<App history={this.props.history} />
+			<Switch>
+				{renderRoutes(Routes)}
+			</Switch>
 		)
 	}
 }
 
 export default hot(Root);
-
-
-

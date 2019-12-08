@@ -1,23 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Top from '../top/';
-import Directions from '../directions/';
-import Subscription from '../subscription/';
-import Reviews from '../reviews/';
-import TrialLesson from '../trialLesson/';
-
-import Nav from '../nav/';
-import Footer from '../footer/';
-
-import DirectionsPage from '../directionsPage/';
-import NotFound from '../404/';
-
-
 import { API } from '../../helpers/const';
 
 import { connect } from 'react-redux';
 import { fetchMainInfo } from './actions';
+
+import Nav from '../nav/';
+import Footer from '../footer/';
 
 const mapStateToProps = (state) => {
 	return {
@@ -40,28 +30,20 @@ class App extends React.Component {
 	}
 	render() {
 		return (
-			<Router history={this.props.history}>
-				<Nav phone={this.props.mainInfo.phone} />
-				<Switch>
-					<Route exact path='/' render={props => {
-						return(
-							<React.Fragment>
-								<Top />
-								<Directions />
-								<Subscription />
-								<Reviews />
-								<TrialLesson />
-							</React.Fragment>
-						)
-					}} />
-
-					<Route exact path="/directions" component={DirectionsPage} />
-					<Route component={NotFound} />
-				</Switch>
-				<Footer contacts={this.props.mainInfo} />
-			</Router>
+			<React.Fragment>
+				<Nav />
+				{this.props.children}
+				<Footer />
+			</React.Fragment>
 		)
 	}
 }
+
+
+function loadData(store){
+	return store.dispatch(fetchMainInfo(API + 'main'))
+}
+
+export { loadData }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

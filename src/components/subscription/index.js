@@ -78,4 +78,10 @@ class Subscription extends Component {
 	}
 }
 
+function loadData(store){
+	return store.dispatch(fetchData(API + 'subscriptions'))
+}
+
+export { loadData }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Subscription)

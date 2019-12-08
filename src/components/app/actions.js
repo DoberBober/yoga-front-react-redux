@@ -28,8 +28,8 @@ export function errorAfterFiveSecond(){
 }
 
 export function fetchMainInfo(url){
-	return (dispatch) => {
-		fetch(url)
+	return async (dispatch) => {
+		await fetch(url)
 			.then((response) => {
 				if(!response.ok) {
 					throw Error(response.statusText)

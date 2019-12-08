@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 
 import './footer.styl';
 
@@ -6,59 +7,65 @@ import VkIcon from './vk.svg'
 import TwitterIcon from './twitter.svg'
 import FbIcon from './fb.svg'
 
+const mapStateToProps = state => {
+  return {
+    mainInfo: state.mainInfo
+  };
+};
+
 class Footer extends Component {
 	render() {
 		return (
 			<footer className="mainFooter">
-				{this.props.contacts &&
+				{this.props.mainInfo &&
 					<div className="container mainFooter__container">
-						{this.props.contacts.address &&
+						{this.props.mainInfo.address &&
 							<section className="mainFooter__section">
-								<b>Адрес:</b>{this.props.contacts.address}
+								<b>Адрес:</b>{this.props.mainInfo.address}
 							</section>
 						}
-						{this.props.contacts.time &&
+						{this.props.mainInfo.time &&
 							<section className="mainFooter__section">
-								<b>График работы:</b>{this.props.contacts.time}
+								<b>График работы:</b>{this.props.mainInfo.time}
 							</section>
 						}
-						{this.props.contacts.phone &&
+						{this.props.mainInfo.phone &&
 							<section className="mainFooter__section">
-								<b>Телефон:</b>{this.props.contacts.phone}
+								<b>Телефон:</b>{this.props.mainInfo.phone}
 							</section>
 						}
-						{this.props.contacts.email &&
+						{this.props.mainInfo.email &&
 							<section className="mainFooter__section">
-								<b>E-mail:</b>{this.props.contacts.email}
+								<b>E-mail:</b>{this.props.mainInfo.email}
 							</section>
 						}
-						{(this.props.contacts.twitter || this.props.contacts.vk || this.props.contacts.fb) &&
+						{(this.props.mainInfo.twitter || this.props.mainInfo.vk || this.props.mainInfo.fb) &&
 							<ul className="mainFooter__social social">
-								{this.props.contacts.vk &&
+								{this.props.mainInfo.vk &&
 									<li>
-										<a href={this.props.contacts.vk} aria-label="Мы в Вконтакте">
+										<a href={this.props.mainInfo.vk} aria-label="Мы в Вконтакте">
 											<VkIcon width="25" height="15" />
 										</a>
 									</li>
 								}
-								{this.props.contacts.twitter &&
+								{this.props.mainInfo.twitter &&
 									<li>
-										<a href={this.props.contacts.twitter} aria-label="Мы в Твиттере">
+										<a href={this.props.mainInfo.twitter} aria-label="Мы в Твиттере">
 											<TwitterIcon width="29" height="20" />
 										</a>
 									</li>
 								}
-								{this.props.contacts.fb &&
+								{this.props.mainInfo.fb &&
 									<li>
-										<a href={this.props.contacts.fb} aria-label="Мы в Фейсбуке">
+										<a href={this.props.mainInfo.fb} aria-label="Мы в Фейсбуке">
 											<FbIcon width="10" height="21" />
 										</a>
 									</li>
 								}
 							</ul>
 						}
-						{this.props.contacts.sitename &&
-							<a href="#" className="mainFooter__copyright">{this.props.contacts.sitename}</a>
+						{this.props.mainInfo.sitename &&
+							<a href="#" className="mainFooter__copyright">{this.props.mainInfo.sitename}</a>
 						}
 					</div>
 				}
@@ -67,4 +74,4 @@ class Footer extends Component {
 	}
 }
 
-export default Footer;
+export default connect(mapStateToProps)(Footer);

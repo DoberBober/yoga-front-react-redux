@@ -43,10 +43,10 @@ export function setCurrentSubscription(type){
 }
 
 export function fetchSubscriptions(url){
-	return (dispatch) => {
+	return async (dispatch) => {
 		dispatch(isLoading(true))
 
-		fetch(url)
+		await fetch(url)
 			.then((response) => {
 				if(!response.ok) {
 					throw Error(response.statusText)

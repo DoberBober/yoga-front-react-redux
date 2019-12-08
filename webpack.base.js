@@ -1,17 +1,16 @@
-const path = require('path');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const config = {
-	devtool: 'source-map',
-	module: {
-		rules: [
-		{
-			test: /\.(js|jsx)$/,
-			use: 'babel-loader',
-			exclude: /node_modules/
-		},
-		{
+module.exports = {
+  // Tell webpack to run babel on every file it runs through
+  devtool: 'source-map',
+  module: {
+    rules: [
+      {
+        test: /\.js?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+{
 			test: /\.styl$/,
 			use: [
 			{
@@ -72,8 +71,8 @@ const config = {
 			}
 			]
 		}
-		]
-	},
+    ]
+  },
 	resolve: {
 		extensions: [
 		'.js',
@@ -83,20 +82,13 @@ const config = {
 			'react-dom': '@hot-loader/react-dom'
 		}
 	},
-	devServer: {
-		contentBase: './public',
-		historyApiFallback: true
-	},
+  devServer: {
+    contentBase: './public',
+    historyApiFallback: true
+  },
 	plugins: [
-	new HtmlWebPackPlugin({
-		hash: true,
-		filename: "index.html",  //target html
-		template: "./src/index.html" //source html
-	}),
 	new MiniCssExtractPlugin({
 		filename: "./css/style.css"
 	}),
 	]
 };
-
-module.exports = config;

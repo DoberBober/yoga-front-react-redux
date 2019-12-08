@@ -70,4 +70,10 @@ class Directions extends Component {
 	}
 }
 
+function loadData(store){
+	return store.dispatch(fetchDirections(API + 'directions'))
+}
+
+export { loadData }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Directions)

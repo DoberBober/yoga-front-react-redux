@@ -28,10 +28,10 @@ export function errorAfterFiveSecond(){
 }
 
 export function fetchDirections(url){
-	return (dispatch) => {
+	return async (dispatch) => {
 		dispatch(isLoading(true))
 
-		fetch(url)
+		await fetch(url)
 			.then((response) => {
 				if(!response.ok) {
 					throw Error(response.statusText)
