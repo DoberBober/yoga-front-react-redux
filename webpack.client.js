@@ -2,7 +2,6 @@ const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config.js');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const config = {
 	// Tell webpack the root file of our
@@ -17,11 +16,11 @@ const config = {
 		publicPath: '/'
 	},
 	plugins: [
-		new HtmlWebPackPlugin({
-			hash: true,
-			filename: "index.html",  //target html
-			template: "./src/index.html" //source html
-		})
+		// new HtmlWebPackPlugin({
+		// 	hash: true,
+		// 	filename: "index.html",  //target html
+		// 	template: "./src/index.html" //source html
+		// })
 	]
 };
 

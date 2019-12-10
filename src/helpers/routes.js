@@ -2,7 +2,7 @@ import React from 'react';
 
 import App, { loadData as loadDataApp } from './../components/app/app.js';
 
-import Top, { loadData as loadDataTop } from './../components/top/';
+import Top from './../components/top/';
 import Directions, { loadData as loadDataDirections } from './../components/directions/';
 import Subscription, { loadData as loadDataSubscription } from './../components/subscription/';
 import Reviews, { loadData as loadDataReviews } from './../components/reviews/';
@@ -12,12 +12,9 @@ import DirectionsPage, { loadData as loadDataDirectionsPage } from './../compone
 
 import NotFound, { loadData as loadDataNotFound } from './../components/404/';
 
-		// loadData: [loadDataApp, loadDataTop, loadDataDirections, loadDataSubscription, loadDataReviews],
-
-
 export default [
 	{
-		loadData: loadDataApp,
+		loadData: [loadDataApp, loadDataDirections, loadDataSubscription, loadDataReviews],
 		path: '/',
 		component: ({history}) => {
 			return(

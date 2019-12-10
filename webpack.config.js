@@ -88,14 +88,14 @@ const config = {
 		historyApiFallback: true
 	},
 	plugins: [
-	new HtmlWebPackPlugin({
-		hash: true,
-		filename: "index.html",  //target html
-		template: "./src/index.html" //source html
-	}),
-	new MiniCssExtractPlugin({
-		filename: "./css/style.css"
-	}),
+		// new HtmlWebPackPlugin({
+		// 	hash: true,
+		// 	filename: "index.html",  //target html
+		// 	template: "./src/index.html" //source html
+		// }),
+		new MiniCssExtractPlugin({
+			filename: "./css/style.css"
+		}),
 	]
 };
 

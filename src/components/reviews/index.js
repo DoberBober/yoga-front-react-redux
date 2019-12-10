@@ -104,7 +104,7 @@ class Reviews extends Component {
 }
 
 function loadData(store){
-	return store.dispatch(fetchData(API + 'reviews'))
+	return store.dispatch(fetchReviews(API + 'reviews'))
 }
 
 export { loadData }

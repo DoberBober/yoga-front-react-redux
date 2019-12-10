@@ -79,7 +79,7 @@ class Subscription extends Component {
 }
 
 function loadData(store){
-	return store.dispatch(fetchData(API + 'subscriptions'))
+	return store.dispatch(fetchSubscriptions(API + 'subscriptions'))
 }
 
 export { loadData }
