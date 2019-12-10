@@ -103,4 +103,10 @@ class Reviews extends Component {
 	}
 }
 
+function loadData(store){
+	return store.dispatch(fetchReviews(API + 'reviews'))
+}
+
+export { loadData }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Reviews)

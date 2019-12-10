@@ -1,23 +1,23 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 // import { render } from 'react-snapshot';
-import Root from './root';
+import { BrowserRouter } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+
+import { store } from './helpers/createStore';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { createBrowserHistory } from 'history';
-import { composeWithDevTools } from 'redux-devtools-extension';
 
-import allReducers from './reducers/';
-
-const store = createStore(allReducers, composeWithDevTools(applyMiddleware(thunk)));
 const history = syncHistoryWithStore(createBrowserHistory(), store);
 
-render(
+import Root from './root';
+
+ReactDOM.hydrate(
 	<Provider store={store}>
-		<Root history={history} />
+		<BrowserRouter>
+			<Root history={history} />
+		</BrowserRouter>
 	</Provider>,
 	document.getElementById('app')
 );
